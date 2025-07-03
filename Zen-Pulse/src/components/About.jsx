@@ -5,7 +5,7 @@ import journeyImage from "../assets/journ.jpg";
 
 const About = () => {
   return (
-    <section className="container mx-auto flex flex-col lg:flex-row py-6 mt-6 px-2 items-center gap-8">
+    <section id="#about" className="container mx-auto flex flex-col lg:flex-row py-6 mt-6 px-2 items-center gap-8">
       {/* About div */}
       <div className="flex flex-col gap-4 w-full justify-start">
         <h1 className="text-3xl text-black font-bold font-raleway py-3">

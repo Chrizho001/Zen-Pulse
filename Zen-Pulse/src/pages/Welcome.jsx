@@ -1,6 +1,8 @@
 import welcomeImage from "../assets/welcome.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
+  const navigate = useNavigate()
   return (
     <section
       style={{
@@ -13,10 +15,10 @@ const Welcome = () => {
           Enjoy Yoga At It's Very Best
         </h1>
         <div className="flex flex-col px-4 gap-y-3 mt-14">
-          <button className="w-full py-2 bg-white/50 rounded-full backdrop-blur-lg text-lg font-semibold text-gray-600">
+          <button onClick={() => navigate('/auth/login')} className="w-full py-2 bg-white/50 rounded-full backdrop-blur-lg text-lg font-semibold text-gray-600 cursor-pointer">
             Sign in
           </button>
-          <button className="text-sm font-bold font-raleway text-gray-100 ">
+          <button onClick={() => navigate('/auth/signup')} className="text-sm font-bold font-raleway text-gray-100 cursor-pointer ">
             Create an account
           </button>
         </div>

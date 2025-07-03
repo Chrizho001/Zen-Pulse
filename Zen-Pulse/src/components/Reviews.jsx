@@ -26,7 +26,7 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="container mx-auto px-4  py-6 mt-12 flex flex-col gap-4 items-center justify-center">
+    <section id="#testimonial" className="container mx-auto px-4  py-6 mt-12 flex flex-col gap-4 items-center justify-center">
       <div className="w-full text-start items-start justify-start">
         <h1 className="text-3xl font-bold text-black font-raleway">
           What Our Customers Are Saying

@@ -9,7 +9,7 @@ const BlogPost = () => {
         style={{
           backgroundImage: `url(${blogImage})`,
         }}
-        className="bg-center bg-cover w-full h-[300px] md:h-[400px]"
+        className="bg-center bg-cover w-full h-[300px] md:h-[400px] "
       ></div>
       {/* content */}
       <div className="flex flex-col gap-y-2 w-fit">

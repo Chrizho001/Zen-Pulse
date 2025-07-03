@@ -3,7 +3,7 @@ import BlogPost from "../Utilities/BlogPost";
 
 const Blog = () => {
   return (
-    <section className="container mx-auto mt-8 py-3 px-2 flex flex-col gap-y-4">
+    <section id="#blog" className="container mx-auto mt-8 py-3 px-2 flex flex-col gap-y-4">
       <h1 className="text-3xl font-bold font-raleway py-6">
         Read Our Daily Blogs
       </h1>

@@ -6,7 +6,7 @@ const BlogItem = () => {
     <div className="w-full flex flex-row gap-x-2 justify-center items-center">
       {/* blog pic */}
       <div
-        className="w-[230px] h-[150px] bg-center bg-cover "
+        className="w-[230px] h-[150px] bg-center bg-cover  "
         style={{
           backgroundImage: `url(${blogPic})`,
         }}
