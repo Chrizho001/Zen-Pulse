@@ -22,7 +22,7 @@ export default function OTPInput({ length = 6, onChange }) {
   };
 
 
-  
+
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && !e.target.value && index > 0) {
       inputsRef.current[index - 1].focus();
@@ -39,7 +39,7 @@ export default function OTPInput({ length = 6, onChange }) {
           ref={(el) => (inputsRef.current[i] = el)}
           onChange={(e) => handleChange(e, i)}
           onKeyDown={(e) => handleKeyDown(e, i)}
-          className="w-10 h-12 text-center text-black text-xl bg-transparent border-b-2 border-gray-400 outline-none focus:border-black"
+          className="w-10 h-12 text-center text-black text-xl bg-gray-200 border-b-2 border-gray-400 outline-none focus:border-black py-2"
         />
       ))}
     </div>
