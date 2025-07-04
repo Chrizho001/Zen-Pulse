@@ -16,6 +16,7 @@ const BlogPost = ({ data }) => {
         ></div>
         {/* content */}
         <div className="flex flex-col gap-y-2 w-fit">
+          
           <div>
             <h2 className="text-2xl font-semibold font-raleway text-black">
               {data.title}
