@@ -33,6 +33,17 @@ const Blog = () => {
     fetchBlogs();
   }, []);
 
+  if (blogs.length < 1) {
+    return (
+      <section
+        id="#blog"
+        className="container mx-auto mt-8 py-3 px-2 flex flex-col gap-y-4 items-center justify-center"
+      >
+        <p className="text-lg  text-black font-raleway">No Blogs Available</p>
+      </section>
+    );
+  }
+
   return (
     <section
       id="#blog"

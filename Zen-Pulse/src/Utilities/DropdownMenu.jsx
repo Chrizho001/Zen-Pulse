@@ -32,7 +32,7 @@ export default function DropdownMenu() {
   const { setAuth } = useAuth();
 
   const handleLogout = async () => {
-    const url = "http://localhost:8000/api/auth/logout/";
+    const url = "https://zenpulse.onrender.com/api/auth/logout/";
     try {
       const response = await axios.post(url, {
         refresh: localStorage.getItem("refresh_token"),

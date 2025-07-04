@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Utilities/AuthContext";
 
 const Signup = () => {
-  const url = "http://localhost:8000/api/auth/register/";
+  const url = "https://zenpulse.onrender.com/api/auth/register/";
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);

@@ -15,7 +15,7 @@ const ActivateAccount = () => {
 
   const handleSubmit = async () => {
     if (otp.length === 6) {
-      const url = "http://localhost:8000/api/auth/verify-otp/";
+      const url = "https://zenpulse.onrender.com/api/auth/verify-otp/";
       try {
         setIsOpen(true);
         const response = await axios.post(url, {

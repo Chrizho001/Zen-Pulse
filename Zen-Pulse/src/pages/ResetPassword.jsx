@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 const ResetPassword = () => {
   const location = useLocation();
   const emailFromState = location.state?.email;
-  const url = "http://localhost:8000/api/auth/reset-password-confirm/";
+  const url = "https://zenpulse.onrender.com/api/auth/reset-password-confirm/";
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);

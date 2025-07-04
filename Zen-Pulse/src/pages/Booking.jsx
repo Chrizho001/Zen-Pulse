@@ -22,7 +22,7 @@ const Booking = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const url = "http://localhost:8000/api/sessions/";
+  const url = "/api/sessions/";
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);

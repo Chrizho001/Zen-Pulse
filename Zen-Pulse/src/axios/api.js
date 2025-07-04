@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 // Base API instance
 const api = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://zenpulse.onrender.com",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -14,7 +14,7 @@ const api = axios.create({
 const refreshToken = async () => {
   try {
     const response = await axios.post(
-      "http://localhost:8000/api/token/refresh/",
+      "https://zenpulse.onrender.com/api/token/refresh/",
       {
         refresh: localStorage.getItem("refresh_token"),
       }

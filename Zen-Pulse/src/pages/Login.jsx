@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Utilities/AuthContext";
 
 const Login = () => {
-  const url = "http://localhost:8000/api/auth/login/";
+  const url = "https://zenpulse.onrender.com/api/auth/login/";
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
@@ -24,7 +24,7 @@ const Login = () => {
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     setLoading2(true);
-    const url = "http://localhost:8000/api/auth/reset-password/";
+    const url = "https://zenpulse.onrender.com/api/auth/reset-password/";
     try {
       const response = await axios.post(url, { email: formData.email });
       console.log(response);
