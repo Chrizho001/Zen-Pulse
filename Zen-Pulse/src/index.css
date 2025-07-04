@@ -6,7 +6,6 @@
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
-
 @theme {
   --font-inter: "Inter", "sans-serif";
   --font-raleway: "Raleway", "sans-serif";
@@ -15,5 +14,8 @@
 @layer base {
   body {
     @apply bg-gray-100 font-inter scroll-smooth;
+  }
+  button {
+    @apply hover:scale-105 transition-transform duration-300;
   }
 }

@@ -21,9 +21,9 @@ const Blog = () => {
       setNext(response.data.next);
       setPrevious(response.data.previous);
 
-      console.log(response);
+      
     } catch (error) {
-      console.log(error.response);
+      
       toast.error("failed to fetch blogs");
       setLoading(false);
     }

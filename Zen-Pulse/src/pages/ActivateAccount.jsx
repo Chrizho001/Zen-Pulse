@@ -23,15 +23,14 @@ const ActivateAccount = () => {
           email: auth.user.email,
         });
         setErrors({}); // clear old errors if success
-        console.log(response);
+
         if (response.status == 200) {
           navigate("/auth/login");
         }
       } catch (error) {
         setIsOpen(false);
-        console.log(error.response);
+
         setErrors(error.response.data);
-        console.log(errors.error);
       }
     }
   };

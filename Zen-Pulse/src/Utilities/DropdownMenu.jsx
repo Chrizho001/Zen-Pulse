@@ -20,8 +20,6 @@ const navigation = [
   { name: "Testimonial", to: "#testimonial", type: "anchor" },
 ];
 
-
-
 const scrollToSection = (id) => {
   const section = document.getElementById(id);
   if (section) section.scrollIntoView({ behavior: "smooth" });
@@ -31,8 +29,6 @@ export default function DropdownMenu() {
   const navigate = useNavigate();
   const { setAuth } = useAuth();
 
-
-  
   const handleLogout = async () => {
     const url = "https://zenpulse.onrender.com/api/auth/logout/";
     try {
@@ -46,7 +42,6 @@ export default function DropdownMenu() {
         navigate("/auth/login");
       }
     } catch (error) {
-      console.log(error.response);
       toast.error("logout failed");
     }
   };

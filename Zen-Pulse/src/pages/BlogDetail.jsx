@@ -23,7 +23,7 @@ const BlogDetail = () => {
       const response = await api.get(`/api/blog/${slug}`);
       setBlog(response.data);
     } catch (error) {
-      console.error(error);
+      
       toast.error("Failed to fetch blog post");
     } finally {
       setLoading(false);

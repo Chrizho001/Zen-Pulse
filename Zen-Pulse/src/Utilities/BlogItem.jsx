@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BlogItem = ({ data }) => {
   if (!data) return null;
-  console.log("BlogItem data:", data);
+  
 
   return (
     <Link to={`/blog/${data.slug}`}>

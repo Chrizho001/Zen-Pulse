@@ -33,7 +33,6 @@ const ResetPassword = () => {
       setErrors({});
       navigate("/auth/login");
     } catch (error) {
-      console.log(error.response);
       setLoading(false);
       setErrors(error.response.data);
     }
@@ -42,7 +41,6 @@ const ResetPassword = () => {
   useEffect(() => {
     if (emailFromState) {
       setFormData((prev) => ({ ...prev, email: emailFromState }));
-      console.log("Email from state:", emailFromState); //
     }
   }, [emailFromState]);
 
@@ -64,7 +62,8 @@ const ResetPassword = () => {
                 Reset Password
               </h1>
               <span className="text-sm font-raleway text-gray-600 text-center">
-                Enter your OTP code sent to {formData.email} and your new password
+                Enter your OTP code sent to {formData.email} and your new
+                password
               </span>
             </div>
             <div className="flex w-full">

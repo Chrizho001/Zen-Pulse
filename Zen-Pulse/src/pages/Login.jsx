@@ -27,10 +27,9 @@ const Login = () => {
     const url = "https://zenpulse.onrender.com/api/auth/reset-password/";
     try {
       const response = await axios.post(url, { email: formData.email });
-      console.log(response);
+
       navigate("/auth/reset-password", { state: { email: formData.email } });
     } catch (error) {
-      console.log(error);
       setErrors(error.response.data);
       setLoading2(false);
     }
@@ -47,15 +46,14 @@ const Login = () => {
           Accept: "application/json",
         },
       });
-      console.log(response);
-      console.log("Saving tokens...");
+      
       localStorage.setItem("access_token", response.data.access_token);
       localStorage.setItem("refresh_token", response.data.refresh_token);
       setAuth({ isAuthenticated: true, user: { email: formData.email } });
 
       navigate("/");
     } catch (error) {
-      console.log(error.response);
+      
       setErrors(error.response.data);
       setLoading(false);
     }

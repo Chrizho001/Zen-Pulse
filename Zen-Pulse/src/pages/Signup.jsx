@@ -30,14 +30,14 @@ const Signup = () => {
     setLoading(true);
     try {
       const response = await axios.post(url, formData);
-      console.log(response);
+      
       setErrors({}); // clear old errors if success
       setAuth({ isAuthenticated: false, user: { email: formData.email } });
 
       navigate("/auth/activate-account");
     } catch (error) {
       setLoading(false);
-      console.log(error.response);
+      
       setErrors(error.response.data);
     }
   };

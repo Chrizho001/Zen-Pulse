@@ -29,7 +29,7 @@ const Booking = () => {
     try {
       const response = await api.post(url, formData);
       setErrors({});
-      console.log(response);
+      
       toast.success(response.data.message);
       setLoading(false);
       setFormData({
@@ -38,7 +38,7 @@ const Booking = () => {
         description: "",
       });
     } catch (error) {
-      console.log(error.response);
+      
       setLoading(false);
       setErrors(error.response.data);
     }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BlogPost = ({ data }) => {
   if (!data) return null;
-  console.log("BlogPost data:", data);
+  
   return (
     <Link to={`/blog/${data.slug}`}>
       <div className="flex flex-col gap-y-2 w-full lg:w-[600px] mb-8">
@@ -16,7 +16,7 @@ const BlogPost = ({ data }) => {
         ></div>
         {/* content */}
         <div className="flex flex-col gap-y-2 w-fit">
-          
+
           <div>
             <h2 className="text-2xl font-semibold font-raleway text-black">
               {data.title}
