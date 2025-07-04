@@ -6,7 +6,5 @@ import flowbiteReact from "flowbite-react/plugin/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), flowbiteReact()],
-  server: {
-    port: 3000,
-  },
+  base: process.env.VITE_BASE_PATH || "/Zen-Pulse",
 });
