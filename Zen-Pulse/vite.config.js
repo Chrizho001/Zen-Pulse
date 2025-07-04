@@ -8,5 +8,9 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), flowbiteReact()],
   server: {
     port: 3000,
+    allowedHosts: [
+      'localhost',
+      'f57f-102-90-118-208.ngrok-free.app' // 👈 your ngrok domain
+    ],
   },
 });

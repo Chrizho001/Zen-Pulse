@@ -82,7 +82,7 @@ const Signup = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, first_name: e.target.value })
                     }
-                    className="outline-none border-none focus:ring-0 focus:outline-none text-sm font-raleway w-full"
+                    className="outline-none border-none focus:ring-0 focus:outline-none text-sm text-black font-raleway w-full"
                   />
                 </div>
                 {errors.first_name && (
@@ -105,7 +105,7 @@ const Signup = () => {
                       setFormData({ ...formData, last_name: e.target.value })
                     }
                     id=""
-                    className="outline-none border-none focus:ring-0 focus:outline-none text-sm font-raleway w-full"
+                    className="outline-none border-none focus:ring-0 focus:outline-none text-sm text-black font-raleway w-full"
                   />
                 </div>
                 {errors.last_name && (
@@ -129,7 +129,7 @@ const Signup = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm font-raleway w-full"
+                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm text-black font-raleway w-full"
                 />
               </div>
               {errors.email && (
@@ -149,7 +149,7 @@ const Signup = () => {
                     setFormData({ ...formData, password: e.target.value })
                   }
                   id=""
-                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm  w-full"
+                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm text-black  w-full"
                 />
                 {!passwordVisible ? (
                   <button
@@ -190,7 +190,7 @@ const Signup = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, password2: e.target.value })
                   }
-                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm w-full"
+                  className="outline-none border-none focus:ring-0 focus:outline-none text-black text-sm w-full"
                 />
                 {!password2Visible ? (
                   <button

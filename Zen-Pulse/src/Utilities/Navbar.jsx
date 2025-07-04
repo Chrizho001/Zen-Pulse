@@ -36,7 +36,7 @@ const Navbar = () => {
     <nav className="bg-gray-600/20 backdrop-blur-lg px-8 py-3 mb-8 rounded-full flex items-center justify-between">
       {/* logo */}
       <div className="flex items-center justify-center w-fit gap-2">
-        <h3 className="text-xl font-semibold font-raleway">
+        <h3 className="text-xl text-black font-semibold font-raleway">
           Zen<span className="text-white">Pulse</span>
         </h3>
       </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
       </div>
       <button
         onClick={handleLogout}
-        className="hidden md:flex px-4 py-2 bg-gray-500 text-white  text-sm cursor-pointer rounded-full"
+        className="hidden md:flex px-4 py-2 bg-black text-white  text-sm cursor-pointer rounded-full"
       >
         Logout
       </button>

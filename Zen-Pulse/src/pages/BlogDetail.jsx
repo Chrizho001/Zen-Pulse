@@ -1,34 +1,91 @@
-import myImage from "../assets/hero.jpg";
-
-const blogData = {
-  image: myImage,
-  date: "13 January 2025",
-  title: "Benefits Of Kegel Excercises",
-  body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-};
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import api from "../axios/api"; // your axios instance
+import { Spinner } from "flowbite-react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 const BlogDetail = () => {
+  const { slug } = useParams();
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat("en-US", options).format(date);
+  };
+
+  const fetchBlogDetail = async () => {
+    try {
+      const response = await api.get(`/api/blog/${slug}`);
+      setBlog(response.data);
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to fetch blog post");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogDetail();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Spinner size="xl" />
+      </div>
+    );
+  }
+
+  if (!blog) {
+    return <p className="text-center text-red-500">Blog post not found.</p>;
+  }
+
   return (
-    <section className="container mx-auto flex flex-col py-2 px-2 gap-y-2">
+    <section className="w-full mx-auto flex flex-col  gap-y-2 items-center justify-center h-full pt-2.5 overflow-y-auto">
       {/* blog image */}
-      <div className="">
-        <div
-          style={{
-            backgroundImage: `url(${blogData.image})`,
-          }}
-          className="bg-center bg-cover w-full h-[350px]"
-        ></div>
+      <div className="flex w-full items-center justify-center px-2">
+        {blog.image && (
+          <div
+            style={{
+              backgroundImage: `url(${blog.image})`,
+            }}
+            className="bg-center bg-cover w-full h-[400px] md:w-[70%] lg:w-[60%] px-4 py-6"
+          >
+            <button
+              onClick={() => navigate("/")}
+              className=" p-2 rounded-full w-fit bg-white"
+            >
+              <IoIosArrowBack className="text-2xl text-black" />
+            </button>
+          </div>
+        )}
       </div>
       {/* blog content */}
-      <div className="w-full py-2 flex flex-col justify-start text-start">
+      <div className="w-full py-2 px-2 flex flex-col justify-start text-start md:w-[70%] lg:w-[60%]">
         <h1 className="text-3xl font-bold font-raleway text-black tracking-tight py-2">
-          {blogData.title}
+          {blog.title}
         </h1>
-        <span className="text-sm font-normal text-black">{blogData.date}</span>
-        <p className="py-8 mt-2 text-lg font-normal text-wrap">
-          {blogData.body}
+        <span className="text-sm font-normal text-black">
+          {formatDate(blog.created_at)}
+        </span>
+        <p className="py-8 mt-2 text-lg text-black font-normal text-justify font-raleway tracking-wide leading-normal">
+          {blog.content}
         </p>
       </div>
+      <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+        <aside>
+          <p>
+            Copyright © {new Date().getFullYear()} - All right reserved by
+            ZenPulse
+          </p>
+        </aside>
+      </footer>
     </section>
   );
 };

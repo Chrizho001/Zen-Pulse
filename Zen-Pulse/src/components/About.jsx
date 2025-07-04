@@ -1,11 +1,14 @@
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaPeopleRoof } from "react-icons/fa6";
 import { MdOutlineSportsGymnastics } from "react-icons/md";
-import journeyImage from "../assets/journ.jpg";
+import journeyImage from "../assets/ggg.jpg";
 
 const About = () => {
   return (
-    <section id="#about" className="container mx-auto flex flex-col lg:flex-row py-6 mt-6 px-2 items-center gap-8">
+    <section
+      id="#about"
+      className="container mx-auto flex flex-col lg:flex-row py-6 mt-6 px-2 items-center gap-8"
+    >
       {/* About div */}
       <div className="flex flex-col gap-4 w-full justify-start">
         <h1 className="text-3xl text-black font-bold font-raleway py-3">
@@ -20,8 +23,8 @@ const About = () => {
               Expert Instructors
             </h3>
             <p className="text-wrap text-sm font-raleway text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-              nemo accusamus fugiat impedit dignissimos
+              Our certified instructors bring years of experience, compassion,
+              and deep knowledge of yoga philosophy.
             </p>
           </div>
         </div>
@@ -36,8 +39,10 @@ const About = () => {
               Welcoming Community
             </h3>
             <p className="text-wrap text-sm font-raleway text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-              nemo accusamus fugiat impedit dignissimos
+              No egos. No judgment. Just real people like you on a journey to
+              feel better, move better, and live better. You’ll find
+              encouragement, friendship, and a sense of belonging the moment you
+              step through our doors.
             </p>
           </div>
         </div>
@@ -52,8 +57,10 @@ const About = () => {
               Transformative Power Of Yoga
             </h3>
             <p className="text-wrap text-sm font-raleway text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-              nemo accusamus fugiat impedit dignissimos
+              Experience how consistent practice transforms your body, calms
+              your mind, and awakens your spirit. From improving posture and
+              digestion to reducing anxiety and boosting mood — yoga changes
+              everything, inside and out.
             </p>
           </div>
         </div>

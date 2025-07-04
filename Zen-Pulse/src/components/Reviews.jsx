@@ -32,7 +32,7 @@ const Reviews = () => {
           What Our Customers Are Saying
         </h1>
       </div>
-      <div className="flex flex-col gap-4 md:flex-row md:gap-x-8 md:px-12 py-8">
+      <div className="flex flex-col gap-4 md:gap-y-5 lg:flex-row lg:gap-x-8 lg:px-12 py-8">
         {reviews.map((item, index) => (
           <ReviewItem key={index} data={item} />
         ))}

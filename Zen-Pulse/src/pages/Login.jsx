@@ -19,7 +19,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const {setAuth} = useAuth()
+  const { setAuth } = useAuth();
 
   const handleForgotPassword = async (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const Login = () => {
     try {
       const response = await axios.post(url, { email: formData.email });
       console.log(response);
-      navigate("/auth/reset-password");
+      navigate("/auth/reset-password", { state: { email: formData.email } });
     } catch (error) {
       console.log(error);
       setErrors(error.response.data);
@@ -51,8 +51,9 @@ const Login = () => {
       console.log("Saving tokens...");
       localStorage.setItem("access_token", response.data.access_token);
       localStorage.setItem("refresh_token", response.data.refresh_token);
-      setAuth({ isAuthenticated: true, user:  {} });
-      navigate('/')
+      setAuth({ isAuthenticated: true, user: { email: formData.email } });
+
+      navigate("/");
     } catch (error) {
       console.log(error.response);
       setErrors(error.response.data);
@@ -101,7 +102,7 @@ const Login = () => {
                     setFormData({ ...formData, email: e.target.value })
                   }
                   id=""
-                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm font-raleway w-full"
+                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm text-black font-raleway w-full"
                 />
               </div>
               {errors.email && (
@@ -121,7 +122,7 @@ const Login = () => {
                     setFormData({ ...formData, password: e.target.value })
                   }
                   id=""
-                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm font-raleway w-full"
+                  className="outline-none border-none focus:ring-0 focus:outline-none text-sm text-black font-raleway w-full"
                 />
                 {!passwordVisible ? (
                   <button
@@ -130,7 +131,7 @@ const Login = () => {
                       setPasswordVisible(true);
                     }}
                   >
-                    <FaEye className="text-2xl" />
+                    <FaEye className="text-2xl text-black" />
                   </button>
                 ) : (
                   <button
@@ -139,7 +140,7 @@ const Login = () => {
                       setPasswordVisible(false);
                     }}
                   >
-                    <FaEyeSlash className="text-2xl" />
+                    <FaEyeSlash className="text-2xl text-black" />
                   </button>
                 )}
               </div>

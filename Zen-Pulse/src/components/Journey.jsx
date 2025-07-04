@@ -10,7 +10,7 @@ const Journey = () => {
           Start Your Journey Today
         </h1>
       </div>
-      <div className="flex flex-col justify-center w-full gap-y-8 px-2 md:flex-row md:gap-y-0 md:gap-x-6">
+      <div className="flex flex-col justify-center w-full gap-y-8 px-2 md:flex-col md:gap-y-4 lg:flex-row lg:gap-y-0 lg:gap-x-4">
         <div
           className="relative w-full h-[500px] rounded-2xl bg-center bg-cover"
           style={{ backgroundImage: `url(${journeyImage2})` }}
@@ -21,8 +21,8 @@ const Journey = () => {
               Improved Flexibility
             </h3>
             <p className="text-wrap text-sm font-normal py-2 text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              repellat ipsa at quo mollitia harum animi dolore odio id{" "}
+              Loosen up stiff joints and muscles, move freely, and feel more
+              comfortable in your own body.
             </p>
           </div>
         </div>
@@ -37,8 +37,8 @@ const Journey = () => {
               Healthy Body
             </h3>
             <p className="text-wrap text-sm font-normal py-2 text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              repellat ipsa at quo mollitia harum animi dolore odio id{" "}
+              Build strength, boost circulation, and support your immune system
+              — all through mindful movement.
             </p>
           </div>
         </div>
@@ -53,8 +53,8 @@ const Journey = () => {
               Stress Reduction
             </h3>
             <p className="text-wrap text-sm font-normal py-2 text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-              repellat ipsa at quo mollitia harum animi dolore odio id{" "}
+              Calm your mind, lower anxiety, and find peace in the present
+              moment through breath and flow.
             </p>
           </div>
         </div>
