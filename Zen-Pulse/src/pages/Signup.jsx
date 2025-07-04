@@ -158,7 +158,7 @@ const Signup = () => {
                       setPasswordVisible(true);
                     }}
                   >
-                    <FaEye className="text-2xl" />
+                    <FaEye className="text-2xl text-black" />
                   </button>
                 ) : (
                   <button
@@ -167,7 +167,7 @@ const Signup = () => {
                       setPasswordVisible(false);
                     }}
                   >
-                    <FaEyeSlash className="text-2xl" />
+                    <FaEyeSlash className="text-2xl text-black" />
                   </button>
                 )}
               </div>
@@ -199,7 +199,7 @@ const Signup = () => {
                       setPassword2Visible(true);
                     }}
                   >
-                    <FaEye className="text-2xl" />
+                    <FaEye className="text-2xl text-black" />
                   </button>
                 ) : (
                   <button
@@ -208,7 +208,7 @@ const Signup = () => {
                       setPassword2Visible(false);
                     }}
                   >
-                    <FaEyeSlash className="text-2xl" />
+                    <FaEyeSlash className="text-2xl text-black" />
                   </button>
                 )}
               </div>

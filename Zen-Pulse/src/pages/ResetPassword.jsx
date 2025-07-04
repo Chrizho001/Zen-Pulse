@@ -63,7 +63,7 @@ const ResetPassword = () => {
               <h1 className="text-3xl font-semibold  text-gray-600">
                 Reset Password
               </h1>
-              <span className="text-sm font-raleway text-gray-600">
+              <span className="text-sm font-raleway text-gray-600 text-center">
                 Enter your OTP code sent to {formData.email} and your new password
               </span>
             </div>
