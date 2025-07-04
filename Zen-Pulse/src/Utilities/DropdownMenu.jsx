@@ -31,6 +31,8 @@ export default function DropdownMenu() {
   const navigate = useNavigate();
   const { setAuth } = useAuth();
 
+
+  
   const handleLogout = async () => {
     const url = "https://zenpulse.onrender.com/api/auth/logout/";
     try {
