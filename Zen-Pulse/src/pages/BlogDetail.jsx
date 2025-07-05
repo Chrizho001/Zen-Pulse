@@ -11,7 +11,7 @@ const BlogDetail = () => {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     const date = new Date(dateString);
@@ -22,8 +22,8 @@ const BlogDetail = () => {
     try {
       const response = await api.get(`/api/blog/${slug}`);
       setBlog(response.data);
-    } catch (error) {
       
+    } catch (error) {
       toast.error("Failed to fetch blog post");
     } finally {
       setLoading(false);
@@ -53,7 +53,11 @@ const BlogDetail = () => {
         {blog.image && (
           <div
             style={{
-              backgroundImage: `url(${blog.image})`,
+              backgroundImage: `url(${
+                blog.image.startsWith("http")
+                  ? blog.image
+                  : `https://res.cloudinary.com/djmgfxvhf/${blog.image}`
+              })`,
             }}
             className="bg-center bg-cover w-full h-[400px] md:w-[70%] lg:w-[60%] px-4 py-6"
           >
