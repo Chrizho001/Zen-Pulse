@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 
 const BlogPost = ({ data }) => {
   if (!data) return null;
-  console.log(data.image)
+  console.log(data.image);
+
+  const cloudinaryBase = "https://res.cloudinary.com/djmgfxvhf/";
+  const imageUrl = data.image.startsWith("http")
+    ? data.image
+    : `${cloudinaryBase}${data.image}`;
 
   return (
     <Link to={`/blog/${data.slug}`}>
@@ -11,7 +16,7 @@ const BlogPost = ({ data }) => {
         {/* image */}
         <div className=" w-full h-[300px] md:h-[400px] ">
           <img
-            src={data.image}
+            src={imageUrl}
             alt={data.title}
             className="w-[230px] h-[150px] object-cover rounded-md"
           />

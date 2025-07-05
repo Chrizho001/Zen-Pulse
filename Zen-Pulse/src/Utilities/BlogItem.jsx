@@ -4,13 +4,18 @@ import { Link } from "react-router-dom";
 const BlogItem = ({ data }) => {
   if (!data) return null;
 
+  const cloudinaryBase = "https://res.cloudinary.com/djmgfxvhf/";
+  const imageUrl = data.image.startsWith("http")
+    ? data.image
+    : `${cloudinaryBase}${data.image}`;
+
   return (
     <Link to={`/blog/${data.slug}`}>
       <div className="w-full flex flex-row gap-x-2 justify-center items-center">
         {/* blog pic */}
         <div className="w-[230px] h-[150px]  max-h-[150px] ">
           <img
-            src={data.image}
+            src={imageUrl}
             alt={data.title}
             className="w-[230px] h-[150px] object-cover rounded-md"
           />
