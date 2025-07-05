@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 
 const BlogPost = ({ data }) => {
   if (!data) return null;
-  
+
   return (
     <Link to={`/blog/${data.slug}`}>
       <div className="flex flex-col gap-y-2 w-full lg:w-[600px] mb-8">
         {/* image */}
-        <div
-          style={{
-            backgroundImage: `url(${data.image})`,
-          }}
-          className="bg-center bg-cover w-full h-[300px] md:h-[400px] "
-        ></div>
+        <div className=" w-full h-[300px] md:h-[400px] ">
+          <img
+            src={data.image}
+            alt={data.title}
+            className="w-[230px] h-[150px] object-cover rounded-md"
+          />
+        </div>
         {/* content */}
         <div className="flex flex-col gap-y-2 w-fit">
-
           <div>
             <h2 className="text-2xl font-semibold font-raleway text-black">
               {data.title}
