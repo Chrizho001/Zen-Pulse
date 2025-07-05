@@ -18,7 +18,7 @@ const BlogPost = ({ data }) => {
           <img
             src={imageUrl}
             alt={data.title}
-            className="w-[230px] h-[150px] object-cover rounded-md"
+            className="w-full h-[300px] object-cover rounded-md"
           />
         </div>
         {/* content */}
