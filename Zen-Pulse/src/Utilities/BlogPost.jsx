@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const BlogPost = ({ data }) => {
   if (!data) return null;
+  console.log(data.image)
 
   return (
     <Link to={`/blog/${data.slug}`}>
