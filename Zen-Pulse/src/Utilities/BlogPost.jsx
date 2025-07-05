@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BlogPost = ({ data }) => {
   if (!data) return null;
-  console.log(data.image);
+  
 
   const cloudinaryBase = "https://res.cloudinary.com/djmgfxvhf/";
   const imageUrl = data.image.startsWith("http")
